@@ -6,6 +6,8 @@ export default async function Home() {
     authToken: Deno.env.get("turso_db_auth_dev")
   })
 
+  /** just putting a comment to commit and redeploy */
+
   const db_data = await db.execute(`select nama_pengguna from customer_login where email = 'ki.atok23@gmail.com'`)
 
   const nama_pengguna = db_data.rows.length != 0 ? db_data.rows[0].nama_pengguna : undefined
